@@ -37,6 +37,7 @@ THIRD_PARTY_APPS = []
 LOCAL_APPS = [
     'core',
     'users',
+    'projects',
     'work_time',
 ]
 
