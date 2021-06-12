@@ -32,9 +32,6 @@ class Project(models.Model):
         self.code_name = self.code_name.upper()
         super(Project, self).save(*args, **kwargs)
 
-    # def get_absolute_url(self):
-    #     return reverse('project-detail', kwargs={'code_name': self.code_name})
-
     class Meta:
         verbose_name = _("Project")
         verbose_name_plural = _("Projects")
