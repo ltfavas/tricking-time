@@ -89,13 +89,13 @@ class WorkEntry(models.Model):
         _('Description'),
         max_length=200,
         blank=False, null=False,
-        help_text=_("A description for the activity Cooking| Making Soup with "
-                    "Mrs. Lovett"),
+        help_text=_("A description for the activity Cooking, e.i Making Soup "
+                    "with Mrs. Lovett"),
     )
 
     project = models.ForeignKey(
         Project,
-        null=True,
+        blank=True, null=True,
         on_delete=models.SET_NULL,
     )
 

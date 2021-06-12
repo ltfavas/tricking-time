@@ -9,9 +9,10 @@ colorlog = "*"
 pylint = "*"
 pylint-django = "*"
 coverage = "*"
+faker = "*"
+faker-airtravel = "*"
 
 [packages]
 django = "*"
 python-decouple = "*"
 psycopg2-binary = "*"
-
