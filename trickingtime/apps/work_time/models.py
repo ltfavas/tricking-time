@@ -12,11 +12,13 @@ from .helpers import (
     get_duration_decimal
 )
 from projects.models import Project
+from core.models import UUIDModel
+
 
 logger = logging.getLogger(__name__)
 
 
-class WorkDay(models.Model):
+class WorkDay(UUIDModel):
 
     day = models.DateField(
         _('Day'),
@@ -47,7 +49,7 @@ class WorkDay(models.Model):
         verbose_name_plural = _("Work Days")
 
 
-class WorkEntry(models.Model):
+class WorkEntry(UUIDModel):
 
     day = models.ForeignKey(
         WorkDay,

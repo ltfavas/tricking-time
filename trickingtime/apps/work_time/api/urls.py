@@ -9,7 +9,7 @@ v1_urlpatterns = [
         name='work-entries'
     ),
     path(
-        route='work-entries/<int:id>/',
+        route='work-entries/<uuid:uuid>/',
         view=work_time_views.WorkEntryRUDAPIView.as_view(),
         name='work-entries'
     ),

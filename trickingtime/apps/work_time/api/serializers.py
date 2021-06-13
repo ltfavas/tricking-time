@@ -5,16 +5,28 @@ from ..models import (
     WorkEntry
 )
 
+from projects.models import Project
+
 
 class WorkDaySerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkDay
-        fields = ['slug', 'day']
+        fields = ['uuid', 'slug', 'day']
 
 
 class WorkEntrySerializer(serializers.ModelSerializer):
+    day = serializers.SlugRelatedField(
+        many=False,
+        slug_field='slug',
+        queryset=WorkDay.objects.all()
+    )  
+    project = serializers.SlugRelatedField(
+        many=False,
+        slug_field='code_name',
+        queryset=Project.objects.all()
+    )
 
     class Meta:
         model = WorkEntry
-        fields = ['day', 'project', 'begin_time', 'end_time',
+        fields = ['uuid', 'day', 'project', 'begin_time', 'end_time',
                   'duration', 'duration_decimal', 'description', ]

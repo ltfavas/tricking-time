@@ -18,12 +18,11 @@ class WorkEntryListCreateAPIView(ListCreateAPIView):
     queryset = WorkEntry.objects.all()
     permission_classes = ()
     serializer_class = WorkEntrySerializer
-    lookup_field = 'id'
-    # lookup_field = 'uuid'
+    lookup_field = 'uuid'
 
 
 class WorkEntryRUDAPIView(RetrieveUpdateDestroyAPIView):
     queryset = WorkEntry.objects.all()
     permission_classes = ()
     serializer_class = WorkEntrySerializer
-    lookup_field = 'id'
+    lookup_field = 'uuid'
